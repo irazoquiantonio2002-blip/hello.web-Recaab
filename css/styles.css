@@ -1288,14 +1288,24 @@ section > .container {
   object-fit: cover;
 }
 
-.gallery-logo-card img {
-  object-fit: contain;
-  padding: 22px;
+.gallery-logo-card {
   background:
     linear-gradient(rgba(0, 51, 102, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 51, 102, 0.045) 1px, transparent 1px),
     #ffffff;
   background-size: 28px 28px;
+}
+
+.gallery-logo-card img {
+  object-fit: contain;
+  padding: 22px;
+  filter: grayscale(1) opacity(0.72);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-logo-card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0) opacity(1);
 }
 
 .gallery-card figcaption {
@@ -1304,6 +1314,14 @@ section > .container {
   color: var(--muted);
   font-weight: 700;
   line-height: 1.5;
+}
+
+.gallery-logo-card figcaption {
+  min-height: auto;
+  padding: 14px 18px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  background: #ffffff;
 }
 
 .testimonial-card {
